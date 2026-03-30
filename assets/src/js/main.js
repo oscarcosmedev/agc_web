@@ -1,0 +1,59 @@
+/**
+ * assets/js/main.js
+ * Punto de entrada JavaScript del tema AGC.
+ * Variables PHP↔JS disponibles en el objeto global `AGC` (inyectado por wp_localize_script).
+ */
+
+import { initHeader }       from './modules/header.js';
+import { initLangSwitcher } from './modules/lang-switcher.js';
+import { initBoxTracking }  from './modules/box-tracking.js';
+
+// ─── Estado global (disponible desde PHP) ──────────────────────────────────
+const { lang, themeUri, isDebug } = window.AGC ?? {};
+
+// ─── Debug helper (silenciado en producción vía isDebug) ───────────────────
+const log = (...args) => isDebug && console.log('[AGC]', ...args);
+log('Theme JS loaded', { lang, themeUri });
+
+// ─── Inicialización ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  log('DOM ready');
+
+  initHeader();
+  initLangSwitcher();
+  initBoxTracking();
+  initMobileMenu();
+  initFadeIn();
+});
+
+// ─── Menú móvil ─────────────────────────────────────────────────────────────
+function initMobileMenu() {
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const nav    = document.querySelector('#site-navigation');
+
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
+// ─── Animación de entrada al hacer scroll ─────────────────────────────────
+function initFadeIn() {
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+}

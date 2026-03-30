@@ -1,0 +1,216 @@
+// ─── Variables locales ────────────────────────────────────────────────────────
+$footer-bg: #0d1b2a;
+$footer-text: rgba(255, 255, 255, 0.75);
+$footer-text-strong: #ffffff;
+$footer-border: rgba(255, 255, 255, 0.1);
+
+// ─── Contenedor principal ─────────────────────────────────────────────────────
+.site-footer {
+    background-color: $footer-bg;
+    color: $footer-text;
+    font-size: 0.875rem;
+}
+
+// ─── Logo ─────────────────────────────────────────────────────────────────────
+.footer-logo {
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    &__img {
+        height: 3rem;
+        width: auto;
+    }
+
+    &__text {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $footer-text-strong;
+    }
+}
+
+// ─── Grid principal ───────────────────────────────────────────────────────────
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+// ─── Direcciones ─────────────────────────────────────────────────────────────
+.footer-addresses {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+
+    &__flag {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.125rem;
+        border-radius: 2px;
+        overflow: hidden;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    &__text {
+        font-style: normal;
+        color: $footer-text;
+        line-height: 1.7;
+    }
+}
+
+// ─── Navegación ───────────────────────────────────────────────────────────────
+.footer-nav {
+
+    .footer-nav__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        li a {
+            color: $footer-text-strong;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color var(--transition-base), opacity var(--transition-base);
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        .current-menu-item > a {
+            opacity: 0.6;
+        }
+    }
+}
+
+// ─── Contacto ─────────────────────────────────────────────────────────────────
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.625rem 2rem;
+        background-color: $footer-text-strong;
+        color: $footer-bg;
+        font-weight: 700;
+        font-size: 0.9375rem;
+        border-radius: 999px;
+        text-decoration: none;
+        transition: background-color var(--transition-base), color var(--transition-base);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
+        color: $footer-text;
+        text-decoration: none;
+        transition: color var(--transition-base);
+
+        svg {
+            flex-shrink: 0;
+            opacity: 0.75;
+        }
+
+        &:hover {
+            color: $footer-text-strong;
+
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// ─── Redes sociales ───────────────────────────────────────────────────────────
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: $footer-text-strong;
+        text-decoration: none;
+        transition: opacity var(--transition-base);
+
+        &:hover {
+            opacity: 0.65;
+        }
+    }
+}
+
+// ─── Barra inferior ───────────────────────────────────────────────────────────
+.footer-bottom {
+    border-top: 1px solid $footer-border;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
+
+    &__copy,
+    &__credit {
+        font-size: 0.8125rem;
+        color: rgba(255, 255, 255, 0.45);
+        margin: 0;
+    }
+
+    &__credit strong {
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 700;
+    }
+}

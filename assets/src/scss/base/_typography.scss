@@ -1,0 +1,58 @@
+// ─── Headings ─────────────────────────────────────────────────────────────────
+// h1, h2, h3, h4, h5, h6 {
+//   font-family: var(--font-sans);
+//   font-weight: 700;
+//   line-height: 1.2;
+//   color: var(--color-primary);
+// }
+
+// h1 { font-size: clamp(2rem, 4vw, 3rem); }
+// h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+// h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+// h4 { font-size: 1.25rem; }
+// h5 { font-size: 1.125rem; }
+// h6 { font-size: 1rem; }
+
+// ─── Párrafos y prosa ─────────────────────────────────────────────────────────
+p {
+    margin-bottom: 1rem;
+    max-width: 70ch;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.entry-content {
+
+    p,
+    ul,
+    ol,
+    blockquote,
+    pre,
+    table {
+        margin-bottom: 1.5rem;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5rem;
+        list-style: revert;
+    }
+
+    blockquote {
+        border-left: 4px solid var(--color-accent);
+        padding-left: 1.25rem;
+        color: var(--color-text-muted);
+        font-style: italic;
+    }
+
+    a {
+        color: var(--color-accent-dark);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+}

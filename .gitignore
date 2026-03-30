@@ -1,0 +1,52 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# Vite build output
+assets/dist/
+dist/
+
+# Env & Sensitive Data
+.env
+.env.*
+!.env.example
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Editor/IDEs
+.vscode/
+.agents/
+.claude/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+CLAUDE.md
+
+# WordPress Specific
+# (If the theme is in a larger repo, usually ignored at higher level)
+uploads/
+wp-config.php
+*.sql
+*.zip
+*.gz
+*.tar
+
+# ACF Local JSON (Keep them versioned unless you want to exclude them)
+# acf-json/*.json
+
+# Composer
+vendor/
+composer.lock

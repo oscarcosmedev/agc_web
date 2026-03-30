@@ -1,0 +1,100 @@
+// assets/src/scss/partials/_box-tracking.scss
+// Estilos del componente Box Tracking (formulario de rastreo flotante).
+
+.box-tracking {
+  position: relative;
+  z-index: 10;
+  margin-top: -3rem;   // sobresale ligeramente del hero
+  padding-inline: var(--spacing-container);
+  padding-bottom: 4rem;
+}
+
+// ─── Tarjeta ──────────────────────────────────────────────────────────────────
+.box-tracking__card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lg);
+  padding: 2rem clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+// ─── Label ────────────────────────────────────────────────────────────────────
+.box-tracking__label {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.875rem;
+}
+
+// ─── Field wrap ──────────────────────────────────────────────────────────────
+.box-tracking__field-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+
+  &:focus-within {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgb(177 39 27 / 0.12);
+  }
+}
+
+// ─── Icono ────────────────────────────────────────────────────────────────────
+.box-tracking__icon {
+  flex-shrink: 0;
+  color: var(--color-secondary);
+}
+
+// ─── Input ────────────────────────────────────────────────────────────────────
+.box-tracking__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  outline: none;
+  min-width: 0;
+
+  &::placeholder { color: var(--color-text-muted); }
+}
+
+// ─── Botón submit ─────────────────────────────────────────────────────────────
+.box-tracking__btn {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 0.625rem 1.375rem;
+  font-size: 0.9375rem;
+}
+
+// ─── Resultado / Feedback (aria-live) ─────────────────────────────────────────
+.box-tracking__result {
+  margin-top: 0.875rem;
+  font-size: 0.9375rem;
+  min-height: 1.5em;
+  transition: color var(--transition-base);
+
+  &--success { color: #166534; }  // green-800
+  &--error   { color: var(--color-secondary); }
+  &--loading { color: var(--color-text-muted); }
+}
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@media (max-width: 600px) {
+  .box-tracking__field-wrap {
+    flex-wrap: wrap;
+    border-radius: var(--radius-card);
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .box-tracking__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

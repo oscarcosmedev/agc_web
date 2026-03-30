@@ -1,0 +1,88 @@
+// assets/src/scss/partials/_hero.scss
+// Estilos del componente Hero — sección principal con imagen o video de fondo.
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    /* full viewport (safe area aware) */
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    /* fallback sin imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ─── Fondo de video (iframe YouTube/Vimeo o <video> directo) ─────────────── */
+.hero__video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    /* evita interacción con el iframe/video */
+}
+
+.hero__video-el {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Cubre el contenedor en 16:9 sin importar el tamaño del viewport */
+    min-width: 100%;
+    min-height: 100%;
+    width: 177.78vh;
+    /* 100vh × (16/9) */
+    height: 56.25vw;
+    /* 100vw × (9/16) */
+
+    border: none;
+
+    /* Para <video> nativo */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ─── Overlay oscuro sobre imagen o video ─────────────────────────────────── */
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgb(0 0 0 / 0.45) 0%,
+            rgb(0 0 0 / 0.6) 100%);
+    z-index: 1;
+}
+
+/* ─── Contenido (sobre el overlay) ────────────────────────────────────────── */
+.hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ─── Descripción (WYSIWYG) ───────────────────────────────────────────────── */
+.hero__description {
+    color: rgba(255 255 255 / 0.85);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 52ch;
+
+    /* Resetear estilos del WYSIWYG dentro del hero */
+    p {
+        margin-block: 0.5em;
+    }
+
+    p:first-child {
+        margin-top: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* ─── CTA Button ──────────────────────────────────────────────────────────── */
+.hero__cta {
+    margin-top: 0.5rem;
+}
