@@ -30,6 +30,30 @@ function agc_vite_asset(string $entry): string
         : '';
 }
 
+// ─── Helper: obtener CSS asociados a un entry de JS ───────────────────────────
+function agc_vite_js_css_assets(string $entry): array
+{
+    static $manifest = null;
+
+    if (null === $manifest) {
+        $manifest_path = AGC_THEME_DIR . '/assets/dist/.vite/manifest.json';
+        if (file_exists($manifest_path)) {
+            // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+            $manifest = json_decode(file_get_contents($manifest_path), true) ?? [];
+        } else {
+            $manifest = [];
+        }
+    }
+
+    $urls = [];
+    if (!empty($manifest[$entry]['css'])) {
+        foreach ($manifest[$entry]['css'] as $file) {
+            $urls[] = AGC_THEME_URI . '/assets/dist/' . $file;
+        }
+    }
+    return $urls;
+}
+
 // ─── Enqueue principal ────────────────────────────────────────────────────────
 add_action('wp_enqueue_scripts', function () {
 
@@ -83,6 +107,12 @@ add_action('wp_enqueue_scripts', function () {
 
         if ($js_url) {
             wp_enqueue_script('agc-main-js', $js_url, [], null, true);
+
+            // Encolar CSS generado por imports dentro del JS (ej. Swiper)
+            $js_css = agc_vite_js_css_assets('assets/src/js/main.js');
+            foreach ($js_css as $index => $css) {
+                wp_enqueue_style('agc-main-js-css-' . $index, $css, [], null);
+            }
         }
     }
 

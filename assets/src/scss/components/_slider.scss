@@ -1,0 +1,60 @@
+/**
+ * _slider.scss — Swiper genérico
+ * Los estilos base de Swiper se importan desde slider.js (Vite los bundlea).
+ * Aquí solo van los overrides y el estilo de navegación custom.
+ */
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ── Botones de navegación ─────────────────────────────────────────────── */
+.slider__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-third);
+    cursor: pointer;
+    transition: border-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    &:hover {
+        border-color: var(--color-secondary);
+        color: var(--color-secondary);
+        box-shadow: var(--shadow-card);
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &--prev {
+        left: -24px;
+    }
+
+    &--next {
+        right: -24px;
+    }
+}

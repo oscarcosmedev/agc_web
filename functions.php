@@ -27,6 +27,9 @@ $agc_includes = [
     // ─── Helpers de componentes (co-localizados en template-parts) ─────────
     'template-parts/components/hero/hero-data.php',               // Datos del hero
     'template-parts/components/box-tracking/box-tracking-data.php', // Datos del tracking
+    'template-parts/components/noticias/noticias-data.php',       // Datos de las noticias
+    'template-parts/components/banner-media/banner-media-data.php', // Datos del banner media
+    'template-parts/components/tramites/tramites-data.php',       // Datos de los trámites
 ];
 
 foreach ($agc_includes as $file) {

@@ -1,7 +1,6 @@
 <?php
 
 /**
- * template-parts/layout/site-footer.php
  * Footer global del sitio.
  * Datos: agc_get_footer_data() en inc/helpers/footer-data.php.
  */

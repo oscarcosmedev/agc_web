@@ -7,6 +7,7 @@
 import { initHeader }       from './modules/header.js';
 import { initLangSwitcher } from './modules/lang-switcher.js';
 import { initBoxTracking }  from './modules/box-tracking.js';
+import { initSliders }      from './modules/slider.js';
 
 // ─── Estado global (disponible desde PHP) ──────────────────────────────────
 const { lang, themeUri, isDebug } = window.AGC ?? {};
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initLangSwitcher();
   initBoxTracking();
+  initSliders();
   initMobileMenu();
   initFadeIn();
 });

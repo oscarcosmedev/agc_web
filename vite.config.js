@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  base: './', // Permite que las rutas a los assets en el CSS sean relativas (ideal para sub-directorios)
   plugins: [
     tailwindcss(),
     {
