@@ -2,7 +2,7 @@
 $custom_class = $args['class'] ?? '';
 ?>
 
-<div class="box-two-column py-10 <?php echo $custom_class; ?>">
+<div class="box-two-column py-section <?php echo $custom_class; ?>">
     <div class="w-full max-w-7xl mx-auto px-4 xl:px-0">
         <div class="flex flex-col lg:flex-row justify-center items-center">
             <div class="box-two-column__left w-full h-full max-w-xl min-h-[350px] rounded-xl bg-gray-300">

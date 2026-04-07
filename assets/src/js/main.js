@@ -1,13 +1,13 @@
 /**
- * assets/js/main.js
  * Punto de entrada JavaScript del tema AGC.
  * Variables PHP↔JS disponibles en el objeto global `AGC` (inyectado por wp_localize_script).
  */
 
-import { initHeader }       from './modules/header.js';
+import { initHeader } from './modules/header.js';
 import { initLangSwitcher } from './modules/lang-switcher.js';
-import { initBoxTracking }  from './modules/box-tracking.js';
-import { initSliders }      from './modules/slider.js';
+import { initBoxTracking } from './modules/box-tracking.js';
+import { initSliders } from './modules/slider.js';
+import { initAccordeon } from './modules/accordeon.js';
 
 // ─── Estado global (disponible desde PHP) ──────────────────────────────────
 const { lang, themeUri, isDebug } = window.AGC ?? {};
@@ -18,44 +18,45 @@ log('Theme JS loaded', { lang, themeUri });
 
 // ─── Inicialización ────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  log('DOM ready');
+    log('DOM ready');
 
-  initHeader();
-  initLangSwitcher();
-  initBoxTracking();
-  initSliders();
-  initMobileMenu();
-  initFadeIn();
+    initHeader();
+    initLangSwitcher();
+    initBoxTracking();
+    initSliders();
+    initAccordeon();
+    initMobileMenu();
+    initFadeIn();
 });
 
 // ─── Menú móvil ─────────────────────────────────────────────────────────────
 function initMobileMenu() {
-  const toggle = document.querySelector('[data-menu-toggle]');
-  const nav    = document.querySelector('#site-navigation');
+    const toggle = document.querySelector('[data-menu-toggle]');
+    const nav = document.querySelector('#site-navigation');
 
-  if (!toggle || !nav) return;
+    if (!toggle || !nav) return;
 
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
+    toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    });
 }
 
 // ─── Animación de entrada al hacer scroll ─────────────────────────────────
 function initFadeIn() {
-  if (!('IntersectionObserver' in window)) return;
+    if (!('IntersectionObserver' in window)) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
 
-  document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+    document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
 }

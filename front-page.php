@@ -1,11 +1,5 @@
 <?php
 
-/**
- * front-page.php
- * Template para la página de inicio del sitio (landing).
- * WordPress lo usa cuando está configurado: Ajustes → Lectura → Página de inicio estática.
- */
-
 defined('ABSPATH') || exit;
 
 get_header();

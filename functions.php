@@ -30,6 +30,8 @@ $agc_includes = [
     'template-parts/components/noticias/noticias-data.php',       // Datos de las noticias
     'template-parts/components/banner-media/banner-media-data.php', // Datos del banner media
     'template-parts/components/tramites/tramites-data.php',       // Datos de los trámites
+    'template-parts/components/box-intro/box-intro-data.php',       // Datos del box intro
+    'template-parts/components/accordeon/accordeon-data.php',       // Datos del accordeon
 ];
 
 foreach ($agc_includes as $file) {

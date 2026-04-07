@@ -1,8 +1,6 @@
 <?php
 
 /**
- * template-parts/components/hero/hero.php
- *
  * Prioridad de fondo: video > imagen > color sólido (--color-primary).
  */
 
@@ -13,7 +11,7 @@ $is_direct   = $media_type === 'video' && agc_hero_is_direct_video($hero['video_
 ?>
 
 <section
-    class="hero <?php echo esc_attr($extra_class); ?> min-h-screen"
+    class="hero <?php echo esc_attr($extra_class); ?>"
     <?php if ($media_type === 'image') : ?>
     style="background-image: url(<?php echo esc_url($hero['bg_url']); ?>)"
     <?php endif; ?>
