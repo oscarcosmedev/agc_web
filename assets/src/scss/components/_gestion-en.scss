@@ -1,0 +1,88 @@
+.gestion-en {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: stretch;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // ── Inner wrapper ─────────────────────────────────────────────────────────
+    &__inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: stretch;
+        padding-block: clamp(5rem, 6vw, 8rem);
+    }
+
+    // ── Card blanca ───────────────────────────────────────────────────────────
+    &__card {
+        background-color: #fff;
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-lg);
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 520px;
+
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+
+    // ── Título ────────────────────────────────────────────────────────────────
+    &__title {
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        font-weight: 700;
+        color: var(--color-accent);
+        margin-bottom: 1.25rem;
+    }
+
+    // ── Contenido wysiwyg ─────────────────────────────────────────────────────
+    &__content {
+        color: var(--color-text);
+
+        // Listas generadas por el editor
+        ul,
+        ol {
+            padding-left: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+                position: relative;
+                padding-left: 1.25rem;
+
+                &::before {
+                    content: '•';
+                    position: absolute;
+                    left: 0;
+                    color: var(--color-secondary);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        ol li {
+            list-style: decimal;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+}

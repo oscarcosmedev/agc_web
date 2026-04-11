@@ -32,6 +32,8 @@ $agc_includes = [
     'template-parts/components/tramites/tramites-data.php',       // Datos de los trámites
     'template-parts/components/box-intro/box-intro-data.php',       // Datos del box intro
     'template-parts/components/accordeon/accordeon-data.php',       // Datos del accordeon
+    'template-parts/components/ventajas-grid/ventajas-grid-data.php',       // Datos del ventajas grid
+    'template-parts/components/gestion-en/gestion-en-data.php',       // Datos del gestion en
 ];
 
 foreach ($agc_includes as $file) {

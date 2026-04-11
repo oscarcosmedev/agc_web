@@ -1,75 +1,67 @@
 <?php
-/**
- * home.php
- * Template del archivo de blog (listado de posts).
- * WordPress lo usa cuando está configurado: Ajustes → Lectura → Página de entradas.
- * NOTA: front-page.php maneja la landing; este archivo es exclusivo del blog.
- */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
-?>
 
-<main id="main" class="site-main blog-archive">
-    <div class="container">
+// ── Query: últimas noticias (posts default) ───────────────────────────────────
+$noticias_query = new WP_Query([
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    'posts_per_page' => 6,
+    'no_found_rows'  => true,
+]);
 
-        <header class="page-header">
-            <h1 class="page-title">
-                <?php
-                $blog_page_id = get_option( 'page_for_posts' );
-                echo $blog_page_id
-                    ? esc_html( get_the_title( $blog_page_id ) )
-                    : esc_html__( 'Blog', 'agc-theme' );
-                ?>
-            </h1>
-        </header>
+if ($noticias_query->have_posts()) : ?>
 
-        <?php if ( have_posts() ) : ?>
+    <section class="home-noticias py-section" aria-labelledby="home-noticias-heading">
+        <div class="w-full max-w-7xl mx-auto px-4 xl:px-0">
 
-            <div class="posts-grid">
-                <?php while ( have_posts() ) : the_post(); ?>
+            <h2 id="home-noticias-heading" class="home-noticias__titulo">
+                <?php esc_html_e('Últimas Noticias', 'agc-theme'); ?>
+            </h2>
 
-                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
+            <ul class="home-noticias__grid">
+                <?php while ($noticias_query->have_posts()) : $noticias_query->the_post(); ?>
+                    <?php
+                    $thumb_id  = get_post_thumbnail_id();
+                    $thumb_src = $thumb_id ? wp_get_attachment_image_url($thumb_id, 'large') : '';
+                    $thumb_alt = $thumb_id ? get_post_meta($thumb_id, '_wp_attachment_image_alt', true) : '';
+                    ?>
+                    <li>
+                        <article class="noticia-card">
+                            <?php if ($thumb_src) : ?>
+                                <a href="<?php the_permalink(); ?>" class="noticia-card__image-wrap" tabindex="-1" aria-hidden="true">
+                                    <img
+                                        src="<?php echo esc_url($thumb_src); ?>"
+                                        alt="<?php echo esc_attr($thumb_alt ?: get_the_title()); ?>"
+                                        class="noticia-card__image"
+                                        loading="lazy">
+                                </a>
+                            <?php else : ?>
+                                <a href="<?php the_permalink(); ?>" class="noticia-card__image-wrap bg-slate-200" tabindex="-1" aria-hidden="true"></a>
+                            <?php endif; ?>
 
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <a href="<?php the_permalink(); ?>" class="post-card__thumbnail" tabindex="-1" aria-hidden="true">
-                                <?php the_post_thumbnail( 'medium_large' ); ?>
-                            </a>
-                        <?php endif; ?>
-
-                        <div class="post-card__body">
-                            <h2 class="post-card__title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h2>
-                            <div class="post-card__meta">
-                                <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-                                    <?php echo esc_html( get_the_date() ); ?>
+                            <div class="noticia-card__body">
+                                <time class="noticia-card__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+                                    <?php echo esc_html(get_the_date('j \d\e F Y')); ?>
                                 </time>
+                                <h3 class="noticia-card__title">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h3>
                             </div>
-                            <div class="post-card__excerpt">
-                                <?php the_excerpt(); ?>
-                            </div>
-                            <a href="<?php the_permalink(); ?>" class="btn btn--primary">
-                                <?php esc_html_e( 'Leer más', 'agc-theme' ); ?>
-                            </a>
-                        </div>
-
-                    </article>
-
+                        </article>
+                    </li>
                 <?php endwhile; ?>
-            </div>
+            </ul>
 
-            <?php the_posts_pagination( [
-                'prev_text' => '&larr; ' . __( 'Anterior', 'agc-theme' ),
-                'next_text' => __( 'Siguiente', 'agc-theme' ) . ' &rarr;',
-            ] ); ?>
+        </div>
+    </section>
 
-        <?php else : ?>
-            <p class="no-results"><?php esc_html_e( 'No hay entradas publicadas aún.', 'agc-theme' ); ?></p>
-        <?php endif; ?>
+<?php
+endif;
+wp_reset_postdata();
 
-    </div>
-</main>
-
-<?php get_footer(); ?>
+get_footer();

@@ -1,56 +1,64 @@
 // ─── Secciones ────────────────────────────────────────────────────────────────
 .section {
-  padding-block: var(--spacing-section);
+    padding-block: var(--spacing-section);
 }
 
 .section--alt {
-  background-color: var(--color-surface-alt);
+    background-color: var(--color-surface-alt);
 }
 
 // ─── Visibilidad por idioma (WPML) ────────────────────────────────────────────
 // Usá body class lang-es / lang-en para mostrar/ocultar contenido por idioma
 [data-lang]:not([data-lang=""]) {
-  display: none;
+    display: none;
 }
 
 body.lang-es [data-lang="es"],
 body.lang-en [data-lang="en"] {
-  display: revert;
+    display: revert;
 }
 
 // ─── Transiciones de página ───────────────────────────────────────────────────
 .page-transition {
-  animation: fade-in 300ms ease forwards;
+    animation: fade-in 300ms ease forwards;
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 // ─── Visualmente oculto (accesibilidad) ──────────────────────────────────────
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 // ─── Truncar texto ─────────────────────────────────────────────────────────────
 .truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// ─── Breadcrumb ─────────────────────────────────────────────────────────────
+.breadcrumb {
+    &>span:last-child {
+        color: var(--color-secondary);
+        font-weight: 700;
+    }
 }

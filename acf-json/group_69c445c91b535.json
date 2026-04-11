@@ -163,6 +163,13 @@
                 "operator": "==",
                 "value": "page-templates\/template-about.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "services"
+            }
         ]
     ],
     "menu_order": 0,
@@ -176,5 +183,5 @@
     "show_in_rest": 0,
     "display_title": "",
     "acfml_field_group_mode": "translation",
-    "modified": 1775500798
+    "modified": 1775588954
 }

@@ -47,7 +47,7 @@ $header = agc_get_header_data();
                         'theme_location' => 'primary',
                         'menu_id'        => 'primary-menu',
                         'container'      => false,
-                        'menu_class'     => 'main-navigation__list flex justify-center items-center gap-8',
+                        'menu_class'     => 'main-navigation__list flex justify-center items-center gap-4',
                     ]);
 
                     remove_filter('nav_menu_link_attributes', $_active_link, 10);
@@ -107,7 +107,7 @@ $header = agc_get_header_data();
                 <span class="nav-toggle__bar"></span>
             </button>
 
-        </div><!-- /.site-header__nav-wrap -->
+        </div>
 
-    </div><!-- /.container.site-header__inner -->
+    </div>
 </header>

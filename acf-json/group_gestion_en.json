@@ -1,11 +1,11 @@
 {
-    "key": "group_69d40b7c7aa04",
-    "title": "Box Intro",
+    "key": "group_gestion_en",
+    "title": "Aduanero - Gestión",
     "fields": [
         {
-            "key": "field_69d40b7c24f91",
-            "label": "Box Intro",
-            "name": "box_intro",
+            "key": "field_gestion_en_group",
+            "label": "Gestión",
+            "name": "gestion",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -20,8 +20,52 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_69d40bdf24f94",
-                    "label": "Image",
+                    "key": "field_gestion_en_title",
+                    "label": "Título",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "Gestión en:",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_gestion_en_items",
+                    "label": "Contenido",
+                    "name": "contenido",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_gestion_en_image",
+                    "label": "Imagen",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -45,50 +89,6 @@
                     "mime_types": "",
                     "allow_in_bindings": 0,
                     "preview_size": "medium"
-                },
-                {
-                    "key": "field_69d40ba124f92",
-                    "label": "title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 2,
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_69d40bbb24f93",
-                    "label": "Description",
-                    "name": "description",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 2,
-                    "default_value": "",
-                    "allow_in_bindings": 0,
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
                 }
             ]
         }
@@ -96,20 +96,13 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_template",
                 "operator": "==",
-                "value": "page-templates\/template-about.php"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "services"
+                "value": "single-templates\/single-aduaneros.php"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 20,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -120,5 +113,5 @@
     "show_in_rest": 0,
     "display_title": "",
     "acfml_field_group_mode": "translation",
-    "modified": 1775589040
+    "modified": 1775855608
 }

@@ -6,6 +6,42 @@ $header-shadow: 0 2px 16px rgb(0 0 0 / 0.10);
 $header-transition: background-color 280ms ease, box-shadow 280ms ease, padding 280ms ease;
 
 // ─── Contenedor principal ─────────────────────────────────────────────────────
+body.blog {
+    .site-header {
+        .site-logo__img--white {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .site-logo__img--color {
+            opacity: 1;
+        }
+
+        .main-navigation__list li a {
+            color: var(--color-text);
+        }
+
+        .lang-switcher__toggle {
+            color: var(--color-text);
+        }
+
+        .nav-toggle__bar {
+            background-color: var(--color-primary);
+        }
+
+        .site-header__nav-wrap {
+            color: var(--color-text);
+
+            .current-menu-item {
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
 .site-header {
     transition: $header-transition;
 
@@ -49,6 +85,7 @@ $header-transition: background-color 280ms ease, box-shadow 280ms ease, padding 
 }
 
 // ─── Logo ─────────────────────────────────────────────────────────────────────
+
 .site-logo {
     flex-shrink: 0;
     display: flex;
@@ -94,6 +131,9 @@ $header-transition: background-color 280ms ease, box-shadow 280ms ease, padding 
 
     .main-navigation__list {
         a {
+            padding: .25rem .5rem;
+            font-weight: 600;
+
             &:hover {
                 text-decoration: underline;
                 text-underline-offset: .5rem;
@@ -104,7 +144,7 @@ $header-transition: background-color 280ms ease, box-shadow 280ms ease, padding 
 
     .current-menu-item {
         a {
-            padding: .25rem .5rem;
+            // padding: .25rem .5rem;
             border-radius: 999px;
             background-color: var(--color-secondary);
 
