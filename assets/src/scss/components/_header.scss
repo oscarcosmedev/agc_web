@@ -32,15 +32,14 @@ body.blog {
         .site-header__nav-wrap {
             color: var(--color-text);
 
-            .current-menu-item {
-                a {
-                    color: white;
-                }
+            .main-navigation__list>li.current-menu-item>a,
+            .main-navigation__list>li.current-menu-ancestor>a,
+            .main-navigation__list>li.current-menu-parent>a {
+                color: white;
             }
         }
     }
 }
-
 
 .site-header {
     transition: $header-transition;
@@ -74,10 +73,10 @@ body.blog {
         .site-header__nav-wrap {
             color: var(--color-text);
 
-            .current-menu-item {
-                a {
-                    color: white;
-                }
+            .main-navigation__list>li.current-menu-item>a,
+            .main-navigation__list>li.current-menu-ancestor>a,
+            .main-navigation__list>li.current-menu-parent>a {
+                color: white;
             }
         }
 
@@ -140,11 +139,11 @@ body.blog {
                 text-decoration-color: white;
             }
         }
-    }
 
-    .current-menu-item {
-        a {
-            // padding: .25rem .5rem;
+        // Pill activo — solo en el nivel superior (no dentro de .sub-menu)
+        &>li.current-menu-item>a,
+        &>li.current-menu-ancestor>a,
+        &>li.current-menu-parent>a {
             border-radius: 999px;
             background-color: var(--color-secondary);
 
@@ -155,8 +154,114 @@ body.blog {
     }
 }
 
-// ─── Navegación principal ──────────────────────────────────────────────────────
+// ─── Navegación principal (dropdown submenú) ──────────────────────────────────
 
+.main-navigation {
+    .main-navigation__list {
+
+        // Elemento padre con hijos
+        .menu-item-has-children {
+            position: relative;
+
+            // Puente invisible que cubre el espacio entre el link y el submenú
+            // para que el hover no se pierda al cruzar el gap
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 0.75rem;
+            }
+
+            // Indicador de chevron
+            >a::after {
+                content: '';
+                display: inline-block;
+                width: 0.4em;
+                height: 0.4em;
+                border-right: 2px solid currentColor;
+                border-bottom: 2px solid currentColor;
+                transform: rotate(45deg) translateY(-2px);
+                margin-left: 0.4em;
+                vertical-align: middle;
+                transition: transform 200ms ease;
+            }
+
+            &:hover>a::after,
+            &:focus-within>a::after {
+                transform: rotate(-135deg) translateY(-2px);
+            }
+
+            // Mostrar submenú al hover / focus-within
+            &:hover>.sub-menu,
+            &:focus-within>.sub-menu {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        // Submenú generado por WordPress
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 0.75rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(-6px);
+            min-width: 16rem;
+            background-color: #fff;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 32px rgb(0 0 0 / 0.14);
+            padding: 0.5rem;
+            list-style: none;
+            margin: 0;
+            z-index: 100;
+
+            // Oculto por defecto — transición suave
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 180ms ease, transform 180ms ease;
+
+            // Flecha decorativa
+            &::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                width: 12px;
+                height: 12px;
+                background-color: #fff;
+                border-radius: 2px;
+            }
+
+            li {
+                a {
+                    display: block;
+                    padding: 0.5rem;
+                    border-radius: 0.5rem;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: var(--color-text, #333) !important;
+                    text-decoration: none !important;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                        color: var(--color-secondary) !important;
+                        text-decoration: none !important;
+                    }
+                }
+
+                // Quitar estilos de current-menu-item dentro del dropdown
+                &.current-menu-item a {
+                    background-color: transparent;
+                    border-radius: 0;
+                    color: var(--color-secondary) !important;
+                }
+            }
+        }
+    }
+}
 
 // ─── Lang Switcher ─────────────────────────────────────────────────────────────
 .lang-switcher {
