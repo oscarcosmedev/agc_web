@@ -1,0 +1,77 @@
+.our-services-cards {
+    // padding-block: var(--py-section, 5rem);
+
+    // ── Grid de cards ─────────────────────────────────────────────────────────
+    &__grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        @media (max-width: 699px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // ── Card ──────────────────────────────────────────────────────────────────
+    &__card {
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    // ── Ícono ─────────────────────────────────────────────────────────────────
+    &__icon {
+        width: 6rem;
+        height: 6rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+
+    // ── Descripción ───────────────────────────────────────────────────────────
+    &__description {
+        width: 100%;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        color: var(--color-text, #333);
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+    &.service-multimodal-cards {
+        .our-services-cards {
+            &__grid {
+                grid-template-columns: repeat(1, 1fr);
+                width: 50%;
+                margin-inline: auto;
+                gap: 0;
+            }
+
+            &__card {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1.5rem;
+            }
+        }
+    }
+}

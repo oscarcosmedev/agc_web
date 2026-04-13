@@ -1,0 +1,17 @@
+.our-services-banner {
+    padding-block: var(--py-section, 5rem);
+    background-color: var(--color-bg-light, #eef2f5);
+
+    &__title {
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        font-weight: 700;
+        color: var(--color-primary, #1a3a5c);
+        margin-bottom: 2rem;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

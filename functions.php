@@ -34,6 +34,10 @@ $agc_includes = [
     'template-parts/components/accordeon/accordeon-data.php',       // Datos del accordeon
     'template-parts/components/ventajas-grid/ventajas-grid-data.php',       // Datos del ventajas grid
     'template-parts/components/gestion-en/gestion-en-data.php',       // Datos del gestion en
+    'template-parts/components/our-services/our-services-data.php',       // Datos del our services
+    'template-parts/components/our-services-cards/our-services-cards-data.php',       // Datos del our services cards
+    'template-parts/components/quote/quote-data.php',       // Datos del quote
+    'template-parts/components/our-services-banner/our-services-banner-data.php',       // Datos del our services banner
 ];
 
 foreach ($agc_includes as $file) {

@@ -1,0 +1,76 @@
+.our-services {
+    padding-block: var(--py-section, 5rem);
+    background-color: var(--color-bg-light, #dce9f0);
+
+    // ── Título principal ──────────────────────────────────────────────────────
+    &__title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: var(--color-secondary, #c0392b);
+        margin-bottom: 2.5rem;
+    }
+
+    // ── Fila ──────────────────────────────────────────────────────────────────
+    &__row {
+        &+& {
+            margin-top: 3rem;
+        }
+    }
+
+    // ── Subtítulo de fila ─────────────────────────────────────────────────────
+    &__row-title {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        font-weight: 700;
+        color: var(--color-primary, #1a3a5c);
+        margin-bottom: 2rem;
+    }
+
+    // ── Lista de servicios ────────────────────────────────────────────────────
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem 2.5rem;
+    }
+
+    // ── Item ──────────────────────────────────────────────────────────────────
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        text-align: center;
+        width: 8rem;
+
+        @media (max-width: 599px) {
+            width: calc(50% - 1.25rem);
+        }
+    }
+
+    // ── Ícono ─────────────────────────────────────────────────────────────────
+    &__icon {
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+
+    // ── Nombre del servicio ───────────────────────────────────────────────────
+    &__name {
+        font-size: 0.8125rem;
+        line-height: 1.4;
+        color: var(--color-primary, #1a3a5c);
+        margin: 0;
+    }
+}
