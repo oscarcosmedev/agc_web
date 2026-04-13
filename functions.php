@@ -39,6 +39,7 @@ $agc_includes = [
     'template-parts/components/quote/quote-data.php',       // Datos del quote
     'template-parts/components/our-services-banner/our-services-banner-data.php',       // Datos del our services banner
     'template-parts/components/servicios-ventajas/servicios-ventajas-data.php',       // Datos del servicios ventajas
+    'template-parts/components/documents/documents-data.php',                         // Datos de documentos
 ];
 
 foreach ($agc_includes as $file) {

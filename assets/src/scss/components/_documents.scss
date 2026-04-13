@@ -1,0 +1,62 @@
+.documents {
+
+    // ── Title ─────────────────────────────────────────────────────────────────
+    &__title {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        font-weight: 700;
+        color: var(--color-secondary);
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+
+    // ── Grid ──────────────────────────────────────────────────────────────────
+    &__grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 5rem;
+
+        @media (max-width: 699px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // ── Item ──────────────────────────────────────────────────────────────────
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    // ── Link ──────────────────────────────────────────────────────────────────
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        text-decoration: none;
+        color: var(--color-text, #333);
+
+        &:hover .documents__name {
+            text-decoration: underline;
+            color: var(--color-secondary);
+        }
+    }
+
+    // ── Icon ──────────────────────────────────────────────────────────────────
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+
+    // ── Name ──────────────────────────────────────────────────────────────────
+    &__name {
+        font-size: 1.15rem;
+        line-height: 1.4;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+}
