@@ -26,6 +26,7 @@ function agc_get_our_services_cards_data(int $post_id = 0): array
         $group = [];
     }
 
+    $title = trim($group['title'] ?? '');
     $cards = [];
 
     for ($i = 1; $i <= 2; $i++) {
@@ -61,5 +62,5 @@ function agc_get_our_services_cards_data(int $post_id = 0): array
         ];
     }
 
-    return ['cards' => $cards];
+    return compact('title', 'cards');
 }

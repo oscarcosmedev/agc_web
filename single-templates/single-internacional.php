@@ -25,6 +25,8 @@ get_template_part('template-parts/components/hero/hero');
 
 get_template_part('template-parts/components/box-intro/box-intro');
 
-get_template_part('template-parts/components/our-services/our-services');
+get_template_part('template-parts/components/servicios-ventajas/servicios-ventajas');
+
+get_template_part('template-parts/components/our-services-cards/our-services-cards');
 
 get_footer();

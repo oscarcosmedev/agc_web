@@ -15,6 +15,13 @@ if (empty($data['cards'])) {
 
 <section class="our-services-cards py-section <?php echo esc_attr($extra); ?>">
     <div class="w-full max-w-6xl mx-auto px-4 xl:px-0">
+
+        <?php if ($data['title']) : ?>
+            <h2 class="our-services-cards__title">
+                <?php echo esc_html($data['title']); ?>
+            </h2>
+        <?php endif; ?>
+
         <ul class="our-services-cards__grid">
             <?php foreach ($data['cards'] as $card) : ?>
                 <li class="our-services-cards__card">

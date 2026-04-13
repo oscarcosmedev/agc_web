@@ -1,6 +1,14 @@
 .our-services-cards {
     // padding-block: var(--py-section, 5rem);
 
+    // ── Título ────────────────────────────────────────────────────────────────
+    &__title {
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        font-weight: 700;
+        color: var(--color-secondary, #c0392b);
+        margin-bottom: 2rem;
+    }
+
     // ── Grid de cards ─────────────────────────────────────────────────────────
     &__grid {
         list-style: none;
@@ -56,7 +64,7 @@
         }
     }
 
-
+    // ── Multimodal ───────────────────────────────────────────────────────────
     &.service-multimodal-cards {
         .our-services-cards {
             &__grid {

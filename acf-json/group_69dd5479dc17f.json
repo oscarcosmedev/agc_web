@@ -1,11 +1,11 @@
 {
-    "key": "group_69dd1c3b6243e",
-    "title": "Our Services - Cards",
+    "key": "group_69dd5479dc17f",
+    "title": "Servicios Ventajas - Cards",
     "fields": [
         {
-            "key": "field_69dd304a3a23e",
-            "label": "Our services card",
-            "name": "our_services",
+            "key": "field_69dd547a4c91f",
+            "label": "Servicios Ventajas",
+            "name": "servicios_ventajas",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -20,7 +20,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_69dd500d953c0",
+                    "key": "field_69dd54ab4c920",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -42,7 +42,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_69dd30833a23f",
+                    "key": "field_69dd54b74c921",
                     "label": "Card 1",
                     "name": "card_1",
                     "aria-label": "",
@@ -59,9 +59,9 @@
                     "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_69dd30903a240",
-                            "label": "Icon",
-                            "name": "icon",
+                            "key": "field_69dd54c24c922",
+                            "label": "Image",
+                            "name": "image",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -86,7 +86,7 @@
                             "preview_size": "medium"
                         },
                         {
-                            "key": "field_69dd30993a241",
+                            "key": "field_69dd54ce4c923",
                             "label": "Description",
                             "name": "description",
                             "aria-label": "",
@@ -110,7 +110,7 @@
                     ]
                 },
                 {
-                    "key": "field_69dd310dc41b1",
+                    "key": "field_69dd562ec1867",
                     "label": "Card 2",
                     "name": "card_2",
                     "aria-label": "",
@@ -127,9 +127,9 @@
                     "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_69dd3118c41b2",
-                            "label": "Icon",
-                            "name": "icon",
+                            "key": "field_69dd5638c1868",
+                            "label": "Imagen",
+                            "name": "imagen",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -154,7 +154,7 @@
                             "preview_size": "medium"
                         },
                         {
-                            "key": "field_69dd3121c41b3",
+                            "key": "field_69dd5641c1869",
                             "label": "Description",
                             "name": "description",
                             "aria-label": "",
@@ -185,20 +185,6 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "single-templates\/single-terrestre.php"
-            }
-        ],
-        [
-            {
-                "param": "post_template",
-                "operator": "==",
-                "value": "single-templates\/single-multimodal.php"
-            }
-        ],
-        [
-            {
-                "param": "post_template",
-                "operator": "==",
                 "value": "single-templates\/single-internacional.php"
             }
         ]
@@ -216,5 +202,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "translation",
-    "modified": 1776111642
+    "modified": 1776113228
 }
