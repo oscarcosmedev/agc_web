@@ -18,7 +18,7 @@ $phone   = agc_option('contact_phone', '+54911 37301311');
     <div class="w-full max-w-6xl mx-auto px-4 xl:px-0">
 
         <h2 class="contact__heading">
-            <?php esc_html_e('¿Te podemos ayudar?', 'agc-theme'); ?>
+            <?php esc_html_e('Can we help you?', 'agc-theme'); ?>
         </h2>
 
         <div class="contact__card">
@@ -54,7 +54,7 @@ $phone   = agc_option('contact_phone', '+54911 37301311');
 
                     <li class="contact__info-item contact__info-item--soon">
                         <span class="contact__info-soon-label">
-                            <?php esc_html_e('Próximamente en:', 'agc-theme'); ?>
+                            <?php esc_html_e('Coming soon to:', 'agc-theme'); ?>
                         </span>
                         <span class="contact__info-soon-flags">
                             <span>EEUU <span aria-label="Estados Unidos">🇺🇸</span></span>

@@ -14,7 +14,7 @@ $custom_class = $args['class'] ?? '';
             <div class="box-two-column__right w-full max-w-xl bg-white lg:-ml-20 px-10 py-5 rounded-xl shadow-lg">
                 <div class="box-two-column__content">
                     <h3 class="box-two-column__title text-secondary text-2xl font-bold mb-4">
-                        <?php _e('Encontranos en:', 'agc-theme'); ?>
+                        <?php _e('Find us:', 'agc-theme'); ?>
                     </h3>
                     <div class="box-two-column__text flex flex-col sm:flex-row sm:justify-between gap-8">
                         <div class="flex flex-col">

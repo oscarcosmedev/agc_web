@@ -16,7 +16,11 @@ get_template_part('template-parts/components/box-two-column/box-two-column');
 
 get_template_part('template-parts/components/noticias/noticias');
 
-get_template_part('template-parts/components/banner-media/banner-media', null, ['class' => 'banner-media--home']);
+get_template_part(
+    'template-parts/components/banner-media/banner-media',
+    null,
+    ['class' => 'banner-media--home']
+);
 
 get_template_part('template-parts/components/tramites/tramites');
 

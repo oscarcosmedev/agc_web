@@ -6,6 +6,7 @@
 
 .slider-wrapper {
     position: relative;
+    min-width: 0; // evita overflow en contextos flex/grid
 }
 
 .slider {

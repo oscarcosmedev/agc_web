@@ -1,7 +1,6 @@
 <?php
 
 /**
- * template-parts/layout/site-header.php
  * Header global del sitio. Dos variantes:
  *   - Base:        fondo transparente, logo blanco (sobre hero).
  *   - is-scrolled: fondo sólido + sombra, logo con color (JS agrega la clase).
@@ -106,6 +105,53 @@ $header = agc_get_header_data();
                 <span class="nav-toggle__bar"></span>
                 <span class="nav-toggle__bar"></span>
             </button>
+
+            <div class="nav-mobile" data-nav-mobile aria-hidden="true">
+
+                <!-- Cabecera del panel mobile -->
+                <div class="nav-mobile__header">
+                    <a href="<?php echo $header['site_url']; ?>" class="nav-mobile__logo" rel="home" aria-label="<?php echo $header['site_name']; ?> — Inicio">
+                        <?php if ($header['has_logo']) : ?>
+                            <?php echo $header['logo_white_html']; ?>
+                        <?php else : ?>
+                            <span class="nav-mobile__logo-text"><?php echo $header['site_name']; ?></span>
+                        <?php endif; ?>
+                    </a>
+
+                    <button
+                        class="nav-mobile__close"
+                        aria-label="<?php esc_attr_e('Cerrar menú', 'agc-theme'); ?>"
+                        data-menu-close>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <?php if ($header['has_mobile_menu']) : ?>
+                    <nav id="site-navigation-mobile" class="main-navigation-mobile" aria-label="<?php esc_attr_e('Menú mobile', 'agc-theme'); ?>">
+                        <?php
+                        $_active_link = function ($atts, $item) {
+                            if (in_array('current-menu-item', $item->classes, true)) {
+                                $atts['class'] = trim(($atts['class'] ?? '') . ' is-active');
+                            }
+                            return $atts;
+                        };
+                        add_filter('nav_menu_link_attributes', $_active_link, 10, 2);
+
+                        wp_nav_menu([
+                            'theme_location' => 'mobile',
+                            'menu_id'        => 'mobile-menu',
+                            'container'      => false,
+                            'menu_class'     => 'main-navigation-mobile__list',
+                        ]);
+
+                        remove_filter('nav_menu_link_attributes', $_active_link, 10);
+                        ?>
+                    </nav>
+                <?php endif; ?>
+            </div>
 
         </div>
 

@@ -1,6 +1,4 @@
-/**
- * _noticias.scss — Sección Últimas Noticias
- */
+@use "../base/mixins" as mix;
 
 /* ── Sección ────────────────────────────────────────────────────────────── */
 .noticias {
@@ -18,8 +16,24 @@
         // Espacio lateral para que los botones de nav no queden cortados
         padding-right: 3rem;
 
+        @include mix.mq-max(sm) {
+            padding-right: 4rem;
+        }
+
         .swiper-wrapper {
             padding: 2rem 0 3rem 0;
+        }
+
+        @include mix.mq-max(sm) {
+            .slider__nav {
+                &--next {
+                    right: 0;
+                }
+
+                &--prev {
+                    left: .25rem;
+                }
+            }
         }
     }
 }

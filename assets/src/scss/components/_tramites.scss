@@ -50,6 +50,21 @@
             flex: none;
             width: 100%;
         }
+
+        &__slider-col {
+            flex: none;
+            width: 100%;
+            // Recorta los botones de nav que sobresalen en desktop (-24px)
+            overflow: hidden;
+            padding-block: 0.5rem; // espacio para la sombra de las cards
+        }
+
+        // Ocultar botones de nav en mobile — el usuario desliza
+        &__slider {
+            .slider__nav {
+                display: none;
+            }
+        }
     }
 }
 

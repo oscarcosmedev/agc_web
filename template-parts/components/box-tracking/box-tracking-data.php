@@ -28,9 +28,9 @@ function agc_get_tracking_data(): array
         'form_id'      => 'tracking-form',
         'input_id'     => 'tracking-input',
         'result_id'    => 'tracking-result',
-        'label'        => __('Rastree su envío', 'agc-theme'),
-        'placeholder'  => __('Número de identificación', 'agc-theme'),
-        'button_label' => __('Rastrear', 'agc-theme'),
-        'error_empty'  => __('Por favor ingrese un número de tracking.', 'agc-theme'),
+        'label'        => __('Track Your Shipment', 'agc-theme'),
+        'placeholder'  => __('Tracking Number', 'agc-theme'),
+        'button_label' => __('Track', 'agc-theme'),
+        'error_empty'  => __('Please enter a tracking number.', 'agc-theme'),
     ];
 }

@@ -54,6 +54,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary' => __('Menú Principal', 'agc-theme'),
         'footer'  => __('Menú Footer', 'agc-theme'),
+        'mobile'  => __('Menú Mobile', 'agc-theme'),
     ]);
 });
 

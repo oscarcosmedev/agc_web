@@ -25,7 +25,7 @@ function agc_get_noticias_data(int $post_id = 0): array
         $group = [];
     }
 
-    $titulo   = trim($group['titulo']   ?? '') ?: __('Últimas Noticias', 'agc-theme');
+    $titulo   = trim($group['titulo']   ?? '') ?: __('Latest News', 'agc-theme');
     $cantidad = (int) ($group['cantidad'] ?? 8);
     $cat_id   = (int) ($group['categoria'] ?? 0);
 

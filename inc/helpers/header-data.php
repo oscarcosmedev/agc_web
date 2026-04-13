@@ -65,7 +65,8 @@ function agc_get_header_data(): array
         'logo_color_html'  => $logo_color_html,
         'site_url'         => esc_url(home_url('/')),
         'site_name'        => esc_html(get_bloginfo('name')),
-        'has_primary_menu' => has_nav_menu('primary'),
+        'has_primary_menu'  => has_nav_menu('primary'),
+        'has_mobile_menu'   => has_nav_menu('mobile'),
         'languages'        => agc_lang_switcher(),
         'current_lang'     => strtoupper(agc_lang()),
     ];

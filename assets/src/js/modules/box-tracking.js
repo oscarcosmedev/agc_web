@@ -9,7 +9,7 @@
 
 const CLASSES = {
   success: 'box-tracking__result--success',
-  error:   'box-tracking__result--error',
+  error: 'box-tracking__result--error',
   loading: 'box-tracking__result--loading',
 };
 
@@ -27,7 +27,7 @@ export function initBoxTracking() {
  * @param {HTMLFormElement} form
  */
 function initSingleTrackingForm(form) {
-  const input  = form.querySelector('[data-tracking-input]');
+  const input = form.querySelector('[data-tracking-input]');
   const result = document.querySelector('[data-tracking-result]');
 
   if (!input || !result) return;
@@ -38,7 +38,7 @@ function initSingleTrackingForm(form) {
     const trackingNumber = input.value.trim();
 
     if (!trackingNumber) {
-      showMessage(result, form.dataset.errorEmpty ?? 'Por favor ingrese un número de tracking.', 'error');
+      showMessage(result, form.dataset.errorEmpty ?? 'Please enter a tracking number.', 'error');
       input.focus();
       return;
     }

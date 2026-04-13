@@ -42,7 +42,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_69cd4c46dbc90",
+                    "key": "field_69dbe2da9dfb0",
                     "label": "Link",
                     "name": "link",
                     "aria-label": "",
@@ -92,9 +92,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_type",
                 "operator": "==",
-                "value": "8"
+                "value": "front_page"
             }
         ]
     ],
@@ -108,6 +108,8 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
     "acfml_field_group_mode": "translation",
-    "modified": 1775062186
+    "modified": 1776018555
 }
