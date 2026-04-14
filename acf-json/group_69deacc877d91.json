@@ -1,0 +1,88 @@
+{
+    "key": "group_69deacc877d91",
+    "title": "Message Widget",
+    "fields": [
+        {
+            "key": "field_69deacc8d9719",
+            "label": "Messaging Widget",
+            "name": "messaging_widget",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_69dead83d971a",
+                    "label": "Whatsapp",
+                    "name": "whatsapp",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Número con código de país, ej: 5491112345678",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "5491112345678",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_69dead83d971b",
+                    "label": "WeChat",
+                    "name": "wechat",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "URL del perfil o enlace de WeChat",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "https://..."
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfml_field_group_mode": "translation",
+    "modified": 1776201140
+}

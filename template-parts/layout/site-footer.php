@@ -133,3 +133,7 @@ $footer = agc_get_footer_data();
     </div>
 
 </footer>
+
+<?php
+get_template_part('template-parts/components/messaging-widget/messaging-widget');
+?>

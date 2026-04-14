@@ -1,10 +1,4 @@
 <?php
-
-/**
- * AGC Theme — functions.php
- * Carga los módulos de inc/ en orden de dependencia.
- */
-
 defined('ABSPATH') || exit;
 
 // ─── Rutas de conveniencia ────────────────────────────────────────────────────
@@ -22,24 +16,25 @@ $agc_includes = [
     'inc/utils.php',                  // Utilidades generales
     'inc/helpers/svg-helpers.php',    // Helpers de SVG
     // ─── Helpers globales (componentes de layout) ─────────────────────────
-    'inc/helpers/header-data.php',    // Datos del header global
-    'inc/helpers/footer-data.php',    // Datos del footer global
+    'inc/helpers/header-data.php',
+    'inc/helpers/footer-data.php',
     // ─── Helpers de componentes (co-localizados en template-parts) ─────────
-    'template-parts/components/hero/hero-data.php',               // Datos del hero
-    'template-parts/components/box-tracking/box-tracking-data.php', // Datos del tracking
-    'template-parts/components/noticias/noticias-data.php',       // Datos de las noticias
-    'template-parts/components/banner-media/banner-media-data.php', // Datos del banner media
-    'template-parts/components/tramites/tramites-data.php',       // Datos de los trámites
-    'template-parts/components/box-intro/box-intro-data.php',       // Datos del box intro
-    'template-parts/components/accordeon/accordeon-data.php',       // Datos del accordeon
-    'template-parts/components/ventajas-grid/ventajas-grid-data.php',       // Datos del ventajas grid
-    'template-parts/components/gestion-en/gestion-en-data.php',       // Datos del gestion en
-    'template-parts/components/our-services/our-services-data.php',       // Datos del our services
-    'template-parts/components/our-services-cards/our-services-cards-data.php',       // Datos del our services cards
-    'template-parts/components/quote/quote-data.php',       // Datos del quote
-    'template-parts/components/our-services-banner/our-services-banner-data.php',       // Datos del our services banner
-    'template-parts/components/servicios-ventajas/servicios-ventajas-data.php',       // Datos del servicios ventajas
-    'template-parts/components/documents/documents-data.php',                         // Datos de documentos
+    'template-parts/components/hero/hero-data.php',
+    'template-parts/components/box-tracking/box-tracking-data.php',
+    'template-parts/components/noticias/noticias-data.php',
+    'template-parts/components/banner-media/banner-media-data.php',
+    'template-parts/components/tramites/tramites-data.php',
+    'template-parts/components/box-intro/box-intro-data.php',
+    'template-parts/components/accordeon/accordeon-data.php',
+    'template-parts/components/ventajas-grid/ventajas-grid-data.php',
+    'template-parts/components/gestion-en/gestion-en-data.php',
+    'template-parts/components/our-services/our-services-data.php',
+    'template-parts/components/our-services-cards/our-services-cards-data.php',
+    'template-parts/components/quote/quote-data.php',
+    'template-parts/components/our-services-banner/our-services-banner-data.php',
+    'template-parts/components/servicios-ventajas/servicios-ventajas-data.php',
+    'template-parts/components/documents/documents-data.php',
+    'template-parts/components/messaging-widget/messaging-widget-data.php',
 ];
 
 foreach ($agc_includes as $file) {

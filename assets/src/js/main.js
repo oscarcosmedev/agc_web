@@ -9,6 +9,7 @@ import { initBoxTracking } from './modules/box-tracking.js'
 import { initSliders } from './modules/slider.js'
 import { initAccordeon } from './modules/accordeon.js'
 import { initMobileMenu } from './modules/nav-mobile.js'
+import { initMessagingWidget } from './modules/messagingWidget.js'
 
 // ─── Estado global (disponible desde PHP) ──────────────────────────────────
 const { lang, themeUri, isDebug } = window.AGC ?? {}
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAccordeon()
     initFadeIn()
     initMobileMenu()
+    initMessagingWidget()
 })
 
 

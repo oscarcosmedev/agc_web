@@ -1,0 +1,142 @@
+.messaging-widget {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    z-index: 9999;
+
+    @media (max-width: 768px) {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+.messaging-widget__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.messaging-widget__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+}
+
+.messaging-widget__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 1;
+}
+
+// Main toggle button (blue)
+.messaging-widget__button--main {
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+
+    &:hover {
+        background: linear-gradient(135deg, #357ABD 0%, #2868A8 100%);
+    }
+}
+
+// WhatsApp button (green)
+.messaging-widget__button--whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #1EBE57 100%);
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background: linear-gradient(135deg, #1EBE57 0%, #1AA84D 100%);
+    }
+}
+
+// WeChat button (teal)
+.messaging-widget__button--wechat {
+    background-color: var(--color-wsp);
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background: linear-gradient(135deg, var(--color-secondary) 0%, #058C2B 100%);
+    }
+}
+
+// Expanded state
+.messaging-widget--expanded {
+
+    .messaging-widget__button--whatsapp,
+    .messaging-widget__button--wechat {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    // Stagger animation for multiple buttons
+    .messaging-widget__button--wechat {
+        transition-delay: 0.05s;
+    }
+
+    .messaging-widget__button--whatsapp {
+        transition-delay: 0.1s;
+    }
+
+    .messaging-widget__button--main {
+        transform: rotate(45deg);
+
+        &:hover {
+            transform: rotate(45deg) scale(1.1);
+        }
+    }
+}
+
+// Ripple effect on click
+.messaging-widget__button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.messaging-widget__button:active::before {
+    width: 100%;
+    height: 100%;
+}
