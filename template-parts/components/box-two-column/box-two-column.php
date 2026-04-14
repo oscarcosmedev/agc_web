@@ -5,10 +5,10 @@ $custom_class = $args['class'] ?? '';
 <div class="box-two-column py-section <?php echo $custom_class; ?>">
     <div class="w-full max-w-7xl mx-auto px-4 xl:px-0">
         <div class="flex flex-col lg:flex-row justify-center items-center">
-            <div class="box-two-column__left w-full h-full max-w-xl min-h-[350px] rounded-xl bg-gray-300">
-                <picture class="object-cover">
-                    <source srcset="" type="image/webp">
-                    <img src="" alt="">
+            <div class="box-two-column__left relative -z-10 w-full h-full max-w-xl min-h-[350px] rounded-xl bg-gray-300 overflow-hidden">
+                <picture class="absolute inset-0 w-full h-full block">
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/dist/assets/find-us.webp" type="image/webp">
+                    <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri(); ?>/assets/dist/find-us.webp" alt="Descripción">
                 </picture>
             </div>
             <div class="box-two-column__right w-full max-w-xl bg-white lg:-ml-20 px-10 py-5 rounded-xl shadow-lg">

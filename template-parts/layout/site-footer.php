@@ -83,7 +83,7 @@ $footer = agc_get_footer_data();
 
                 <!-- Botón Contacto -->
                 <a href="<?php echo $footer['contact_url']; ?>" class="footer-contact__btn">
-                    <?php esc_html_e('Contacto', 'agc-theme'); ?>
+                    <?php esc_html_e('Contact', 'agc-theme'); ?>
                 </a>
 
 

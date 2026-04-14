@@ -162,3 +162,6 @@ function agc_sanitize_svg_on_upload($file)
     return $file;
 }
 add_filter('wp_handle_upload', 'agc_sanitize_svg_on_upload');
+
+// Desactivar auto <p> en Contact Form 7
+add_filter('wpcf7_autop_or_not', '__return_false');
