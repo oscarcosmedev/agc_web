@@ -13,7 +13,7 @@ get_template_part('template-parts/components/hero/hero');
 ?>
 
 <section class="services-t-multimodal">
-    <div class="max-w-6xl mx-auto py-20 px-4 xl:px-0">
+    <div class="max-w-6xl mx-auto pt-20 px-4 xl:px-0">
         <?php get_template_part('template-parts/components/breadcrumb/breadcrumb'); ?>
         <h1 class="text-secondary text-3xl font-bold uppercase">
             <?php echo $title; ?>
