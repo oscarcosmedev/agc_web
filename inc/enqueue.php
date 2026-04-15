@@ -106,7 +106,7 @@ add_action('wp_enqueue_scripts', function () {
         }
 
         if ($js_url) {
-            wp_enqueue_script('agc-main-js', $js_url, [], null, true);
+            wp_enqueue_script('agc-main-js', $js_url, ['gsap', 'gsap-scrolltrigger'], null, true);
 
             // Encolar CSS generado por imports dentro del JS (ej. Swiper)
             $js_css = agc_vite_js_css_assets('assets/src/js/main.js');
@@ -116,7 +116,26 @@ add_action('wp_enqueue_scripts', function () {
         }
     }
 
+    // Enqueue GSAP on front page for sticky cards animation
+    wp_enqueue_script(
+        'gsap',
+        'https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js',
+        [],
+        '3.14.1',
+        true
+    );
+
+    wp_enqueue_script(
+        'gsap-scrolltrigger',
+        'https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js',
+        ['gsap'],
+        '3.14.1',
+        true
+    );
+
     // ── Variables PHP → JS ──────────────────────────────────────────────────
+    // Nota: en dev, Vite carga microinteractions.js como parte del bundle de main.js.
+    // En ambos modos, GSAP y ScrollTrigger se cargan antes que main-js (dependencias).
     wp_localize_script('agc-main-js', 'AGC', [
         'ajaxUrl'  => admin_url('admin-ajax.php'),
         'nonce'    => wp_create_nonce('agc_nonce'),

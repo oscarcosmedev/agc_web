@@ -10,6 +10,12 @@ import { initSliders } from './modules/slider.js'
 import { initAccordeon } from './modules/accordeon.js'
 import { initMobileMenu } from './modules/nav-mobile.js'
 import { initMessagingWidget } from './modules/messagingWidget.js'
+import { initInteractionFrontPage } from './interactions/interaction-frontPage.js'
+import { initInteractionAbout } from './interactions/interaction-about.js'
+import { initInteractionServices } from './interactions/interaction-services.js'
+import { initInteractionContact } from './interactions/interaction-contact.js'
+import { initInteractionHome } from './interactions/interaction-home.js'
+import { initInteractionServicesSingle } from './interactions/interaction-services-single.js'
 
 // ─── Estado global (disponible desde PHP) ──────────────────────────────────
 const { lang, themeUri, isDebug } = window.AGC ?? {}
@@ -30,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initFadeIn()
     initMobileMenu()
     initMessagingWidget()
+
+    // Microinteracciones GSAP – por plantilla
+    const body = document.body
+    if (body.classList.contains('home')) initInteractionFrontPage()
+    if (body.classList.contains('blog')) initInteractionHome()
+    if (body.classList.contains('page-template-template-about')) initInteractionAbout()
+    if (body.classList.contains('page-template-template-services')) initInteractionServices()
+    if (body.classList.contains('page-template-template-contact')) initInteractionContact()
+    if (body.classList.contains('single-services')) initInteractionServicesSingle()
 })
 
 
